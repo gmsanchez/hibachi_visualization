@@ -8,13 +8,13 @@ Panels:
         - /Status1
         - /Grid1
         - /Odometry1
-        - /Paths1
         - /Paths1/Path1
         - /Paths1/Path1/Status1
         - /Paths1/Path2
         - /Magnetometers1/Mag1
         - /IMU1/Imu1
         - /IMU1/Imu2
+        - /Costmaps1
       Splitter Ratio: 0.5
     Tree Height: 712
   - Class: rviz_common/Selection
@@ -205,29 +205,6 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /odometry/filtered
       Value: true
-    - Alpha: 0.699999988079071
-      Binary representation: false
-      Binary threshold: 100
-      Class: rviz_default_plugins/Map
-      Color Scheme: map
-      Draw Behind: false
-      Enabled: false
-      Name: Map
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /map
-      Update Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /map_updates
-      Use Timestamp: false
-      Value: false
     - Class: rviz_common/Group
       Displays:
         - Alpha: 1
@@ -369,11 +346,11 @@ Visualization Manager:
       Name: IMU
     - Class: rviz_common/Group
       Displays:
-        - Alpha: 0.699999988079071
+        - Alpha: 0.5
           Binary representation: false
           Binary threshold: 100
           Class: rviz_default_plugins/Map
-          Color Scheme: map
+          Color Scheme: costmap
           Draw Behind: false
           Enabled: true
           Name: Local Costmap
@@ -392,11 +369,11 @@ Visualization Manager:
             Value: /local_costmap/costmap_updates
           Use Timestamp: false
           Value: true
-        - Alpha: 0.699999988079071
+        - Alpha: 0.5
           Binary representation: false
           Binary threshold: 100
           Class: rviz_default_plugins/Map
-          Color Scheme: map
+          Color Scheme: costmap
           Draw Behind: false
           Enabled: true
           Name: Global Costmap
@@ -415,6 +392,52 @@ Visualization Manager:
             Value: /global_costmap/costmap_updates
           Use Timestamp: false
           Value: true
+        - Alpha: 0.5
+          Binary representation: false
+          Binary threshold: 100
+          Class: rviz_default_plugins/Map
+          Color Scheme: map
+          Draw Behind: false
+          Enabled: true
+          Name: Obstacle Layer
+          Topic:
+            Depth: 5
+            Durability Policy: Volatile
+            Filter size: 10
+            History Policy: Keep Last
+            Reliability Policy: Reliable
+            Value: /global_costmap/obstacle_layer
+          Update Topic:
+            Depth: 5
+            Durability Policy: Volatile
+            History Policy: Keep Last
+            Reliability Policy: Reliable
+            Value: /global_costmap/obstacle_layer_updates
+          Use Timestamp: false
+          Value: true
+        - Alpha: 0.699999988079071
+          Binary representation: false
+          Binary threshold: 100
+          Class: rviz_default_plugins/Map
+          Color Scheme: map
+          Draw Behind: false
+          Enabled: false
+          Name: Map
+          Topic:
+            Depth: 5
+            Durability Policy: Volatile
+            Filter size: 10
+            History Policy: Keep Last
+            Reliability Policy: Reliable
+            Value: /map
+          Update Topic:
+            Depth: 5
+            Durability Policy: Volatile
+            History Policy: Keep Last
+            Reliability Policy: Reliable
+            Value: /map_updates
+          Use Timestamp: false
+          Value: false
       Enabled: true
       Name: Costmaps
     - Alpha: 1
@@ -476,7 +499,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.644715309143066
+      Distance: 13.162696838378906
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
